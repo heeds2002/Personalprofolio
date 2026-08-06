@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10151C" />
+  <title>Burtone Heeds Openo — Software Developer</title>
+  <meta name="description" content="Portfolio of Burtone Heeds Openo — final-year Computer Science student, JavaScript & MySQL developer." />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Fonts: JetBrains Mono for labels/headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS (scroll animation) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind (JIT, configured below) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink:   '#10151C',  // near-black navy — dark sections
+            paper: '#F1F2ED',  // warm-neutral light section bg
+            sage:  '#5F9C89',  // primary accent — muted teal-green
+            amber: '#E2A63B',  // secondary accent, used sparingly
+            slate: '#6B7280',
+          },
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.02em;
+    }
+    /* thin sage underline used as a section-title accent */
+    .title-mark::after {
+      content: "";
+      display: block;
+      width: 2.5rem;
+      height: 3px;
+      background: #5F9C89;
+      margin-top: 0.65rem;
+      border-radius: 2px;
+    }
+    ::selection { background: #5F9C89; color: #10151C; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-paper text-ink antialiased">
+
+  <!-- ============ NAV ============ -->
+  <nav class="fixed top-0 w-full z-50 bg-ink/95 backdrop-blur border-b border-white/5">
+    <div class="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="#top" class="font-mono font-bold text-paper text-sm tracking-wide">
+        heeds<span class="text-sage">.</span>dev
+      </a>
+
+      <button
+        class="lg:hidden text-paper text-xl"
+        type="button"
+        onclick="toggleNavbar('mobile-menu')"
+        aria-label="Toggle navigation menu"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-wider text-paper/80">
+        <li><a href="#about" class="hover:text-sage transition-colors">About</a></li>
+        <li><a href="#skills" class="hover:text-sage transition-colors">Skills</a></li>
+        <li><a href="#projects" class="hover:text-sage transition-colors">Projects</a></li>
+        <li><a href="#experience" class="hover:text-sage transition-colors">Experience</a></li>
+        <li>
+          <a href="#contact" class="border border-sage text-sage px-3 py-1.5 rounded hover:bg-sage hover:text-ink transition-colors">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mobile menu -->
+    <ul id="mobile-menu" class="hidden lg:hidden flex-col gap-1 px-6 pb-4 font-mono text-sm text-paper/90 bg-ink">
+      <li><a href="#about" class="block py-2 border-b border-white/5">About</a></li>
+      <li><a href="#skills" class="block py-2 border-b border-white/5">Skills</a></li>
+      <li><a href="#projects" class="block py-2 border-b border-white/5">Projects</a></li>
+      <li><a href="#experience" class="block py-2 border-b border-white/5">Experience</a></li>
+      <li><a href="#contact" class="block py-2 text-sage">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header id="top" class="bg-ink text-paper pt-32 pb-24 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-center">
+      <div class="md:col-span-3" data-aos="fade-up">
+        <p class="eyebrow text-sage text-sm mb-4">// final-year computer science student</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-5">
+          Burtone Heeds Openo
+        </h1>
+        <p class="text-paper/70 text-lg leading-relaxed max-w-xl mb-8">
+          I build full-stack web applications with JavaScript and MySQL. Currently finishing
+          my BSc in Computer Science at the University of Kabianga, and looking for an
+          internship or junior role where I can keep learning and contribute from day one.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="bg-sage text-ink font-mono text-sm font-bold uppercase tracking-wide px-6 py-3 rounded hover:bg-sage/90 transition-colors">
+            View my projects
+          </a>
+          <a href="mailto:heedsopeno@gmail.com" class="border border-paper/30 font-mono text-sm uppercase tracking-wide px-6 py-3 rounded hover:border-sage hover:text-sage transition-colors">
+            Email me
+          </a>
+        </div>
+      </div>
+
+      <!-- Photo placeholder — swap the div below for a real <img> once you have a photo -->
+      <div class="md:col-span-2 flex justify-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="relative w-56 h-56 sm:w-64 sm:h-64">
+       <img
+        src="images/Profolio.jpeg"
+        alt="Burtone Heeds Openo"
+        class="w-full h-full rounded-full object-cover border-2 border-sage/50"
+        >
+    </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-sage text-sm mb-2">// about</p>
+      <h2 class="text-3xl font-bold title-mark mb-8">A bit about me</h2>
+      <p class="text-slate text-lg leading-relaxed max-w-3xl">
+        I'm a final-year Computer Science undergraduate at the University of Kabianga,
+        graduating November 2026. Most of my hands-on experience has come from building
+        two full-stack projects end to end &mdash; from database design through to deployment
+        &mdash; plus a three-month ICT attachment at Kenya Forestry College, where I got
+        comfortable with the practical, hands-on side of IT support. I'm still early in my
+        career, but I learn fast, I like figuring out how things work under the hood, and
+        I enjoy the process of taking an idea from a blank file to something people can
+        actually use.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-sage text-sm mb-2">// skills</p>
+      <h2 class="text-3xl font-bold title-mark mb-10">What I work with</h2>
+
+      <div class="grid sm:grid-cols-2 gap-10">
+        <div data-aos="fade-up">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-slate mb-4">Core</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-ink text-paper font-mono text-xs rounded">JavaScript (ES6+)</span>
+            <span class="px-3 py-1.5 bg-ink text-paper font-mono text-xs rounded">MySQL</span>
+            <span class="px-3 py-1.5 bg-ink text-paper font-mono text-xs rounded">HTML5</span>
+            <span class="px-3 py-1.5 bg-ink text-paper font-mono text-xs rounded">CSS3</span>
+          </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-slate mb-4">Also comfortable with</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 border border-sage text-sage font-mono text-xs rounded">Python</span>
+            <span class="px-3 py-1.5 border border-sage text-sage font-mono text-xs rounded">Flask</span>
+            <span class="px-3 py-1.5 border border-sage text-sage font-mono text-xs rounded">REST APIs</span>
+            <span class="px-3 py-1.5 border border-sage text-sage font-mono text-xs rounded">Git &amp; GitHub Actions</span>
+            <span class="px-3 py-1.5 border border-sage text-sage font-mono text-xs rounded">Responsive Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-sage text-sm mb-2">// projects</p>
+      <h2 class="text-3xl font-bold title-mark mb-10">Things I've built</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Project 1 -->
+        <article class="bg-white border border-black/5 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+          <h3 class="font-bold text-lg mb-2">01. KUES — Exam Management Platform</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">
+            A full-stack exam management system I led the build on: a MySQL relational
+            schema, REST API endpoints, and a GitHub Actions CI/CD pipeline, deployed
+            to a Linux VPS.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="font-mono text-[11px] text-slate">Python</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">Flask</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">MySQL</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">CI/CD</span>
+          </div>
+          <a href="https://github.com/heeds2002" target="_blank" rel="noopener" class="font-mono text-xs text-sage font-bold uppercase tracking-wide">
+            View on GitHub &rarr;
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="bg-white border border-black/5 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="80">
+          <h3 class="font-bold text-lg mb-2">02. Ikonex Academy — Student Management System</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">
+            A student management system for a school: student records, results
+            processing, and report generation, built in JavaScript with a MySQL
+            backend and deployed live.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="font-mono text-[11px] text-slate">JavaScript</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">MySQL</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">HTML/CSS</span>
+          </div>
+          <a href="https://github.com/heeds2002" target="_blank" rel="noopener" class="font-mono text-xs text-sage font-bold uppercase tracking-wide">
+            View on GitHub &rarr;
+          </a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="bg-white border border-black/5 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+          <h3 class="font-bold text-lg mb-2">03. Joke Teller Bot</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">
+            A small web app that tells jokes out loud, using the browser's Web
+            Speech API for text-to-speech.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="font-mono text-[11px] text-slate">JavaScript</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">Web Speech API</span>
+          </div>
+          <a href="https://heeds2002.github.io/Joke-TellerBOT/" target="_blank" rel="noopener" class="font-mono text-xs text-sage font-bold uppercase tracking-wide">
+            Live demo &rarr;
+          </a>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="bg-white border border-black/5 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="80">
+          <h3 class="font-bold text-lg mb-2">04. Quote Generator</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">
+            Displays a random quote at the click of a button, with a clean,
+            simple interface.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="font-mono text-[11px] text-slate">JavaScript</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">CSS</span>
+          </div>
+          <a href="https://heeds2002.github.io/Quote-Generator/" target="_blank" rel="noopener" class="font-mono text-xs text-sage font-bold uppercase tracking-wide">
+            Live demo &rarr;
+          </a>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="bg-white border border-black/5 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow md:col-span-2" data-aos="fade-up">
+          <h3 class="font-bold text-lg mb-2">05. Infinite Scroll</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">
+            Loads new content automatically as you scroll down the page, using
+            asynchronous fetch requests instead of pagination.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="font-mono text-[11px] text-slate">JavaScript</span>
+            <span class="font-mono text-[11px] text-slate">·</span>
+            <span class="font-mono text-[11px] text-slate">Async / Fetch API</span>
+          </div>
+          <a href="https://heeds2002.github.io/Infinite-Scroll/" target="_blank" rel="noopener" class="font-mono text-xs text-sage font-bold uppercase tracking-wide">
+            Live demo &rarr;
+          </a>
+        </article>
+
+      </div>
+
+      <p class="text-slate text-sm mt-8">
+        More projects and code on
+        <a href="https://github.com/heeds2002" target="_blank" rel="noopener" class="text-sage font-semibold">github.com/heeds2002</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE & EDUCATION ============ -->
+  <section id="experience" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+
+      <div data-aos="fade-up">
+        <p class="eyebrow text-sage text-sm mb-2">// experience</p>
+        <h2 class="text-2xl font-bold title-mark mb-6">Experience</h2>
+
+        <div class="border-l-2 border-sage/30 pl-5">
+          <p class="font-mono text-xs text-slate mb-1">Jun 2025 &mdash; Aug 2025</p>
+          <h3 class="font-bold mb-1">ICT Systems Intern</h3>
+          <p class="text-sm text-slate mb-3">Kenya Forestry College, ICT Department</p>
+          <ul class="text-sm text-slate space-y-1.5 list-disc list-inside">
+            <li>Configured computers, routers, switches, and VOIP systems</li>
+            <li>Helped manage LAN/WLAN and server room monitoring</li>
+            <li>Maintained IT inventory and trained 100+ staff and students</li>
+            <li>Commended for technical skill and quickly picking up new tools</li>
+          </ul>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <p class="eyebrow text-sage text-sm mb-2">// education</p>
+        <h2 class="text-2xl font-bold title-mark mb-6">Education</h2>
+
+        <div class="border-l-2 border-sage/30 pl-5">
+          <p class="font-mono text-xs text-slate mb-1">2022 &mdash; November 2026</p>
+          <h3 class="font-bold mb-1">BSc Computer Science</h3>
+          <p class="text-sm text-slate mb-3">University of Kabianga, Kenya</p>
+          <p class="text-sm text-slate">
+            Coursework: Software Engineering, Web Development, Database Systems,
+            Algorithms, Operating Systems, Networking, AI, Security, OOP.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ BEYOND THE CODE (placeholder — personalize this) ============ -->
+  <!--
+    You told me you wanted an "outside of work" section — I don't want to invent
+    hobbies for you, so fill these three in with things that are actually true
+    (e.g. a sport, a hobby, something creative). Keep it to 3–4 short items.
+  -->
+  <section id="beyond" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-sage text-sm mb-2">// beyond the code</p>
+      <h2 class="text-3xl font-bold title-mark mb-8">Outside of work</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="border border-dashed border-sage/40 rounded-lg p-5 text-center" data-aos="fade-up">
+          <span class="font-mono text-sm text-slate/60">Basketball and Games</span>
+        </div>
+        <div class="border border-dashed border-sage/40 rounded-lg p-5 text-center" data-aos="fade-up" data-aos-delay="80">
+          <span class="font-mono text-sm text-slate/60">Travelling and Exploration </span>
+        </div>
+        <div class="border border-dashed border-sage/40 rounded-lg p-5 text-center" data-aos="fade-up" data-aos-delay="160">
+          <span class="font-mono text-sm text-slate/60">Communication and Interation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / FOOTER ============ -->
+  <footer id="contact" class="bg-ink text-paper py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+      <p class="eyebrow text-sage text-sm mb-3">// contact</p>
+      <h2 class="text-3xl font-bold mb-4">Let's work together</h2>
+      <p class="text-paper/60 max-w-xl mx-auto mb-10">
+        I'm looking for internship and junior developer opportunities.
+        Feel free to reach out &mdash; I usually reply within a day.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="mailto:heedsopeno@gmail.com" class="bg-sage text-ink font-mono text-sm font-bold uppercase tracking-wide px-6 py-3 rounded hover:bg-sage/90 transition-colors">
+          <i class="fas fa-envelope mr-2"></i>heedsopeno@gmail.com
+        </a>
+        <a href="tel:+254112959080" class="border border-paper/30 font-mono text-sm uppercase tracking-wide px-6 py-3 rounded hover:border-sage hover:text-sage transition-colors">
+          <i class="fas fa-phone mr-2"></i>+254 112 959 080
+        </a>
+      </div>
+
+      <div class="flex justify-center gap-6 text-xl text-paper/70">
+        <a href="https://github.com/heeds2002" target="_blank" rel="noopener" class="hover:text-sage transition-colors" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/heeds-openo" target="_blank" rel="noopener" class="hover:text-sage transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:heedsopeno@gmail.com" class="hover:text-sage transition-colors" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <p class="font-mono text-xs text-paper/30 mt-14">
+        &copy; 2026 Burtone Heeds Openo
+      </p>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <!-- Navigation Script -->
+  <script src="navbar.js"></script>
+</body>
+</html>
